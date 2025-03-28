@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_824994</versionUuid>
+    <interface>
+        <name>LM_SEC_employeeDetails</name>
+        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_824959</uuid>
+        <description>This section is for employee details.</description>
+        <parentUuid>222aa2d8-d036-47a1-8b2f-350cdb1214a1</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_sectionLayout_v1"(
+  label: "Employee Details",
+  contents: {
+    #"SYSTEM_SYSRULES_columnsLayout"(
+      columns: {
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Employee Name",
+              value: ri!employeeDetails.employeeName,
+              saveInto: ri!employeeDetails.employeeName
+            ),
+            #"SYSTEM_SYSRULES_radioButtonField_v1"(
+              choiceLabels: { "Male", "Female" },
+              choiceValues: { "Male", "Female" },
+              label: "Gender",
+              value: ri!employeeDetails.gender,
+              saveInto: ri!employeeDetails.gender,
+              choiceLayout: "COMPACT"
+            ),
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Years of Experience",
+              value: ri!employeeDetails.yearsOfExperience,
+              saveInto: ri!employeeDetails.yearsOfExperience
+            ),
+            #"SYSTEM_SYSRULES_dateField"(
+              label: "Date of Joining",
+              value: ri!employeeDetails.dateOfJoining,
+              saveInto: ri!employeeDetails.dateOfJoining
+            ),
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Gross Income",
+              value: ri!employeeDetails.grossIncome,
+              saveInto: ri!employeeDetails.grossIncome
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Phone Number",
+              value: ri!employeeDetails.phoneNumber,
+              saveInto: ri!employeeDetails.phoneNumber
+            ),
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Email Id",
+              value: ri!employeeDetails.emailId,
+              saveInto: ri!employeeDetails.emailId
+            ),
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Aadhar Number",
+              value: ri!employeeDetails.aadharNumber,
+              saveInto: ri!employeeDetails.aadharNumber
+            ),
+            #"SYSTEM_SYSRULES_radioButtonField_v1"(
+              choiceLabels: { "Married", "Unmarried" },
+              choiceValues: { "Married", "Unmarried" },
+              label: "Marital Status",
+              value: ri!employeeDetails.maritalStatus,
+              saveInto: ri!employeeDetails.maritalStatus,
+              choiceLayout: "COMPACT"
+            ),
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Designation",
+              value: ri!employeeDetails.designation,
+              saveInto: ri!employeeDetails.designation
+            ),
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Credit Score",
+              value: ri!employeeDetails.creditScore,
+              saveInto: ri!employeeDetails.creditScore
+            )
+          }
+        ),
+        #"SYSTEM_SYSRULES_columnLayout"(
+          contents: {
+            #"SYSTEM_SYSRULES_dateField"(
+              label: "Date of Birth",
+              value: ri!employeeDetails.dateOfBirth,
+              saveInto: ri!employeeDetails.dateOfBirth
+            ),
+            #"SYSTEM_SYSRULES_paragraphField"(
+              label: "Address",
+              value: ri!employeeDetails.address,
+              saveInto: ri!employeeDetails.address
+            ),
+            #"SYSTEM_SYSRULES_textField"(
+              label: "Pan Number",
+              value: ri!employeeDetails.panNumber,
+              saveInto: ri!employeeDetails.panNumber
+            ),
+            #"SYSTEM_SYSRULES_dropdownField_v1"(
+              choiceLabels: { "India", "UK", "USA" },
+              choiceValues: { "India", "UK", "USA" },
+              label: "Nationality",
+              placeholder: "--Choose--",
+              value: ri!employeeDetails.nationality,
+              saveInto: ri!employeeDetails.nationality
+            )
+          }
+        )
+      }
+    )
+  }
+)</definition>
+        <namedTypedValue>
+            <name>employeeDetails</name>
+            <type>
+                <name>LM_Employee_Details</name>
+                <namespace>urn:com:appian:types:LM</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000eca8-7ed3-8000-babd-01ef9001ef90_824994"/>
+    </history>
+</contentHaul>

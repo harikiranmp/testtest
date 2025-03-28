@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_825066</versionUuid>
+    <rule>
+        <name>LM_QE_getLookupDetails</name>
+        <uuid>263b5f9b-b8e6-4907-b52c-ea2f3864f837</uuid>
+        <description>Lookup details</description>
+        <parentUuid>222aa2d8-d036-47a1-8b2f-350cdb1214a1</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#"SYSTEM_SYSRULES_queryEntity_v2"(
+  entity: #"_a-0000eca8-7ed3-8000-babd-01ef9001ef90_825015",
+  query: #"SYSTEM_SYSRULES_query"(
+    filter: #"SYSTEM_SYSRULES_queryFilter"(
+      field: "isActive",
+      operator: "=",
+      value: true()
+    ),
+    pagingInfo: #"SYSTEM_SYSRULES_pagingInfo"(
+      startIndex: 1,
+      batchSize: - 1,
+      sort: #"SYSTEM_SYSRULES_sortInfo"(field: "lookupId", ascending: true())
+    )
+  )
+).data</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000eca8-7ed3-8000-babd-01ef9001ef90_825066"/>
+    </history>
+</contentHaul>

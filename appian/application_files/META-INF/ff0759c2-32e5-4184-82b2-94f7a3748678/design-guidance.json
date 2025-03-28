@@ -1,0 +1,16 @@
+[
+  {
+    "objectUuid": "_a-0000eca8-7ed3-8000-babd-01ef9001ef90_824996",
+    "designGuidanceKey": "sysrule.designGuidance.expressions.unusedRuleInput",
+    "dismissed": true,
+    "instanceCount": 1,
+    "objectTypeName": "{http://www.appian.com/ae/types/2009}Interface"
+  },
+  {
+    "objectUuid": "0002ece4-11ce-8000-f531-014d98014d98",
+    "designGuidanceKey": "sysrule.designGuidance.processModel.displayNameNotDynamic",
+    "dismissed": true,
+    "instanceCount": 1,
+    "objectTypeName": "{http://www.appian.com/ae/types/2009}ProcessModel"
+  }
+]

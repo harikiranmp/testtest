@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types:LM"
+  xmlns:tns="urn:com:appian:types:LM" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="LM_loanDocuments">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">@Table(name="LM_LOAN_DOCUMENTS")</xsd:appinfo>
+      <xsd:appinfo source="http://www.appian.com/ae/types/2009">
+        <ns2:Metadata xmlns:ns2="http://www.appian.com/ae/types/2009">
+          <ns2:versionUuid>0000ecb8-e21f-8000-f394-014d98014d98</ns2:versionUuid>
+          <ns2:history>
+            <ns2:historyInfo versionUuid="0000ecb8-e21f-8000-f394-014d98014d98"/>
+          </ns2:history>
+        </ns2:Metadata>
+      </xsd:appinfo>
+      <xsd:documentation><![CDATA[This Data Type contains the loan documents]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="documentId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @GeneratedValue @Column(name="DOCUMENT_ID", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="loadId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="LOAN_ID", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="documentName" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="DOCUMENT_NAME", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="appianDocumentId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="APPIAN_DOCUMENT_ID", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="comments" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="COMMENTS", length=250)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="createdBy" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="CREATED_BY", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="createdOn" nillable="true" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="CREATED_ON", columnDefinition="DATETIME")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="updatedBy" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="UPDATED_BY", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="updatedOn" nillable="true" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="UPDATED_ON", columnDefinition="DATETIME")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="isActive" nillable="true" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="IS_ACTIVE", columnDefinition="BIT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

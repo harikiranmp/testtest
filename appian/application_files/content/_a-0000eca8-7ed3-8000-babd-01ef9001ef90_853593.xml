@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_853597</versionUuid>
+    <constant>
+        <name>LM_GRP_ADMINISTRATORS</name>
+        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_853593</uuid>
+        <description>Contains the Group- LM Administrators</description>
+        <parentUuid>222aa2d8-d036-47a1-8b2f-350cdb1214a1</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <typedValue>
+            <type>
+                <name>Group</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+            <value>fd2049d5-5bf6-4300-a4d5-5931fa384b12</value>
+        </typedValue>
+        <isEnvironmentSpecific>false</isEnvironmentSpecific>
+    </constant>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000eca8-7ed3-8000-babd-01ef9001ef90_853597"/>
+    </history>
+</contentHaul>

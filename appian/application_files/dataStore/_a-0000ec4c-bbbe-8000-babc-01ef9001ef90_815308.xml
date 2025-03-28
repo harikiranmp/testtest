@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataStoreHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_826235</versionUuid>
+    <dataStore>
+        <uuid>_a-0000ec4c-bbbe-8000-babc-01ef9001ef90_815308</uuid>
+        <name>LM Tables</name>
+        <description>Data Store for tables</description>
+        <dataSourceKey>jdbc/appianbusiness</dataSourceKey>
+        <adaptingExplicitSqlNames>false</adaptingExplicitSqlNames>
+        <autoUpdateSchema>false</autoUpdateSchema>
+        <entities>
+            <entity>
+                <uuid>da8e541c-0d71-41e8-aa1d-a1f702cc52ac</uuid>
+                <name>LM_Employee_Details</name>
+                <type>{urn:com:appian:types:LM}LM_Employee_Details</type>
+            </entity>
+            <entity>
+                <uuid>e42f4ffd-5fb0-4717-a1e7-e39f796cc946</uuid>
+                <name>LM_LoanDetails</name>
+                <type>{urn:com:appian:types:LM}LM_LoanDetails</type>
+            </entity>
+            <entity>
+                <uuid>717afc03-a2c4-425e-bf5f-acc9bab55c34</uuid>
+                <name>LM_Lookup_Details</name>
+                <type>{urn:com:appian:types:LM}LM_Lookup_Details</type>
+            </entity>
+            <entity>
+                <uuid>c53063de-5255-413d-9449-fa3c37b01be6</uuid>
+                <name>LM_RequestHistoryDetails</name>
+                <type>{urn:com:appian:types:LM}LM_RequestHistoryDetails</type>
+            </entity>
+            <entity>
+                <uuid>ff5ec2f7-a9b4-4d1b-8b46-6bead0e249d7</uuid>
+                <name>LM_loanDocuments</name>
+                <type>{urn:com:appian:types:LM}LM_loanDocuments</type>
+            </entity>
+        </entities>
+    </dataStore>
+    <isPublished>true</isPublished>
+    <roleMap>
+        <role inherit="false" allowForAll="false" name="administrators">
+            <users/>
+            <groups>
+                <groupUuid>fd2049d5-5bf6-4300-a4d5-5931fa384b12</groupUuid>
+            </groups>
+        </role>
+        <role inherit="false" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="readers">
+            <users/>
+            <groups>
+                <groupUuid>333cb1e1-5e6a-4877-a42d-268aa640749b</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000eca8-7ed3-8000-babd-01ef9001ef90_826235"/>
+    </history>
+</dataStoreHaul>

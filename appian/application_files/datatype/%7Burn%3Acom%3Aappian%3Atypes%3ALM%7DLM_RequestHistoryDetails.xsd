@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types:LM"
+  xmlns:tns="urn:com:appian:types:LM" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="LM_RequestHistoryDetails">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">@Table(name="LM_REQUEST_HISTORY_DETAILS")</xsd:appinfo>
+      <xsd:appinfo source="http://www.appian.com/ae/types/2009">
+        <ns2:Metadata xmlns:ns2="http://www.appian.com/ae/types/2009">
+          <ns2:versionUuid>0001ec9a-0f35-8000-f20f-014d98014d98</ns2:versionUuid>
+          <ns2:history>
+            <ns2:historyInfo versionUuid="0001ec9a-0f35-8000-f20f-014d98014d98"/>
+          </ns2:history>
+        </ns2:Metadata>
+      </xsd:appinfo>
+      <xsd:documentation><![CDATA[Contains the Request History Details]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="historyId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @GeneratedValue @Column(name="HISTORY_ID", nullable=false, unique=true, columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="loanId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="LOAN_ID", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="assignedTo" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="ASSIGNED_TO", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="assignedOn" nillable="true" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="ASSIGNED_ON", columnDefinition="DATETIME")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="completedBy" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="COMPLETED_BY", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="completedOn" nillable="true" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="COMPLETED_ON", columnDefinition="DATETIME")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="actionPerformed" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="ACTION_PERFORMED", columnDefinition="VARCHAR(200)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="stage" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="STAGE", columnDefinition="VARCHAR(100)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="notes" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="NOTES", columnDefinition="VARCHAR(1000)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

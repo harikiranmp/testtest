@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_825116</versionUuid>
+    <interface>
+        <name>LM_SEC_loanDetails</name>
+        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_824996</uuid>
+        <description>Loan Details</description>
+        <parentUuid>222aa2d8-d036-47a1-8b2f-350cdb1214a1</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!lookupDetails: cast(
+    'type!{urn:com:appian:types:LM}LM_Lookup_Details?list',
+    #"263b5f9b-b8e6-4907-b52c-ea2f3864f837"()
+  ),
+  local!loanDetails: ri!loanDetails,
+  #"SYSTEM_SYSRULES_sectionLayout_v1"(
+    label: "Loan Type",
+    labelIcon: "money",
+    contents: {
+      #"SYSTEM_SYSRULES_columnsLayout"(
+        columns: {
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_dropdownField_v1"(
+                label: "Loan Type",
+                placeholder: "--Choose--",
+                choiceLabels: index(
+                  local!lookupDetails.lookupName,
+                  wherecontains(
+                    "Loan Type",
+                    index(
+                      local!lookupDetails,
+                      "lookupCategory",
+                      null()
+                    )
+                  ),
+                  null()
+                ),
+                choiceValues: index(
+                  local!lookupDetails.lookupId,
+                  wherecontains(
+                    "Loan Type",
+                    index(
+                      local!lookupDetails,
+                      "lookupCategory",
+                      null()
+                    )
+                  ),
+                  null()
+                ),
+                saveInto: local!loanDetails.loanTypeId,
+                value: tointeger(
+                  index(local!loanDetails, "loanTypeId", null())
+                )
+              ),
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Currency",
+                value: index(local!loanDetails, "currency", null()),
+                saveInto: local!loanDetails.currency,
+                
+              ),
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Surety Person",
+                saveInto: local!loanDetails.suretyPersonName,
+                value: index(
+                  local!loanDetails,
+                  "suretyPersonName",
+                  null()
+                )
+              ),
+              #"SYSTEM_SYSRULES_textField"(
+                label: "EMI Amount",
+                saveInto: local!loanDetails.emiAmount,
+                value: index(local!loanDetails, "emiAmount", null())
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_dropdownField_v1"(
+                label: "Priority",
+                placeholder: "--Choose--",
+                choiceLabels: {
+                  index(
+                    local!lookupDetails.lookupName,
+                    wherecontains(
+                      "Priority",
+                      index(
+                        local!lookupDetails,
+                        "lookupCategory",
+                        null()
+                      )
+                    ),
+                    null()
+                  )
+                },
+                choiceValues: {
+                  index(
+                    local!lookupDetails.lookupId,
+                    wherecontains(
+                      "Priority",
+                      index(
+                        local!lookupDetails,
+                        "lookupCategory",
+                        null()
+                      )
+                    ),
+                    null()
+                  )
+                },
+                saveInto: local!loanDetails.priorityId,
+                value: index(local!loanDetails, "priorityId", null())
+              ),
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Repay Duration",
+                saveInto: local!loanDetails.repayDuration,
+                value: index(
+                  local!loanDetails,
+                  "repayDuration",
+                  null()
+                )
+              ),
+              #"SYSTEM_SYSRULES_dropdownField_v1"(
+                label: "Relationship",
+                placeholder: "--Choose--",
+                choiceLabels: {
+                  index(
+                    local!lookupDetails.lookupName,
+                    wherecontains(
+                      "Relationship with surety person",
+                      index(
+                        local!lookupDetails,
+                        "lookupCategory",
+                        null()
+                      )
+                    ),
+                    null()
+                  )
+                },
+                choiceValues: {
+                  index(
+                    local!lookupDetails.lookupId,
+                    wherecontains(
+                      "Relationship with surety person",
+                      index(
+                        local!lookupDetails,
+                        "lookupCategory",
+                        null()
+                      )
+                    ),
+                    null()
+                  )
+                },
+                saveInto: local!loanDetails.relationship,
+                value: index(
+                  local!loanDetails,
+                  "relationship",
+                  null()
+                )
+              ),
+              #"SYSTEM_SYSRULES_dateField"(
+                label: "Expected Date",
+                value: index(
+                  local!loanDetails,
+                  "expectedDate",
+                  null()
+                ),
+                saveInto: local!loanDetails.expectedDate
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_columnLayout"(
+            contents: {
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Loan Amount",
+                value: index(local!loanDetails, "loanAmount", null()),
+                saveInto: local!loanDetails.loanAmount
+              ),
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Interest Rate",
+                value: index(
+                  local!loanDetails,
+                  "interestRate",
+                  null()
+                ),
+                saveInto: local!loanDetails.interestRate
+              ),
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Other Relation",
+                value: index(
+                  local!loanDetails,
+                  "otherRelationship",
+                  null()
+                ),
+                saveInto: local!loanDetails.otherRelationship
+              ),
+              #"SYSTEM_SYSRULES_paragraphField"(
+                label: "Reason",
+                value: index(
+                  local!loanDetails,
+                  "reasonOfLoan",
+                  null()
+                ),
+                saveInto: local!loanDetails.reasonOfLoan
+              )
+            }
+          )
+        }
+      )
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>loanDetails</name>
+            <type>
+                <name>LM_LoanDetails</name>
+                <namespace>urn:com:appian:types:LM</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>lookupDetails</name>
+            <type>
+                <name>NS_lookupTable?list</name>
+                <namespace>urn:com:appian:types:NS</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000eca8-7ed3-8000-babd-01ef9001ef90_825116"/>
+    </history>
+</contentHaul>

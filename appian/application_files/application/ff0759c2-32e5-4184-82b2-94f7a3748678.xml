@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="UTF-8"?><applicationHaul xmlns:a="http://www.appian.com/ae/types/2009">
+        
+    <versionUuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_900861</versionUuid>
+        
+    <application>
+                
+        <name>Loan Management</name>
+                
+        <uuid>ff0759c2-32e5-4184-82b2-94f7a3748678</uuid>
+                
+        <description/>
+                
+        <parentUuid>SYSTEM_APPLICATIONS_ROOT</parentUuid>
+                
+        <visibility>
+                        
+            <advertise>false</advertise>
+                        
+            <hierarchy>true</hierarchy>
+                        
+            <indexable>true</indexable>
+                        
+            <quota>false</quota>
+                        
+            <searchable>true</searchable>
+                        
+            <system>false</system>
+                        
+            <unlogged>false</unlogged>
+                    
+        </visibility>
+                
+        <urlIdentifier>vMkPVA</urlIdentifier>
+                
+        <published>false</published>
+                
+        <public>false</public>
+                
+        <prefix>LM</prefix>
+                
+        <associatedObjects>
+                        
+            <globalIdMap>
+                                
+                <item>
+                                        
+                    <type>datatype</type>
+                                        
+                    <uuids>
+                                                
+                        <uuid>{urn:com:appian:types:LM}LM_Employee_Details</uuid>
+                                                
+                        <uuid>{urn:com:appian:types:LM}LM_LoanDetails</uuid>
+                                                
+                        <uuid>{urn:com:appian:types:LM}LM_RequestHistoryDetails</uuid>
+                                                
+                        <uuid>{urn:com:appian:types:LM}LM_Lookup_Details</uuid>
+                                                
+                        <uuid>{urn:com:appian:types:LM}LM_V_Loan_Details</uuid>
+                                                
+                        <uuid>{urn:com:appian:types:LM}LM_loanDocuments</uuid>
+                                            
+                    </uuids>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>dataStore</type>
+                                        
+                    <uuids>
+                                                
+                        <uuid>_a-0000ec4c-bbbe-8000-babc-01ef9001ef90_815308</uuid>
+                                                
+                        <uuid>_a-0000ec4c-bbbe-8000-babc-01ef9001ef90_816155</uuid>
+                                            
+                    </uuids>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>user</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>groupType</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>group</type>
+                                        
+                    <uuids>
+                                                
+                        <uuid>fd2049d5-5bf6-4300-a4d5-5931fa384b12</uuid>
+                                                
+                        <uuid>333cb1e1-5e6a-4877-a42d-268aa640749b</uuid>
+                                            
+                    </uuids>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>content</type>
+                                        
+                    <uuids>
+                                                
+                        <uuid>222aa2d8-d036-47a1-8b2f-350cdb1214a1</uuid>
+                                                
+                        <uuid>aef87afe-5c0c-4dc2-b718-054285ff6a7d</uuid>
+                                                
+                        <uuid>20f38593-9362-4ece-951e-c698d1a2f3cf</uuid>
+                                                
+                        <uuid>b8e94c48-8a00-426c-a167-cf9c575ad3a2</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_824959</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_824996</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_825015</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_825117</uuid>
+                                                
+                        <uuid>263b5f9b-b8e6-4907-b52c-ea2f3864f837</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_826178</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_826184</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_826190</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_826202</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_826208</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_843642</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_843648</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_853551</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_853593</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_900850</uuid>
+                                                
+                        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_900856</uuid>
+                                            
+                    </uuids>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>forum</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>processModelFolder</type>
+                                        
+                    <uuids>
+                                                
+                        <uuid>26a0a9a2-321f-4a6d-a68c-19ee2bf6e1e4</uuid>
+                                            
+                    </uuids>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>processModel</type>
+                                        
+                    <uuids>
+                                                
+                        <uuid>0002ece4-11ce-8000-f531-014d98014d98</uuid>
+                                            
+                    </uuids>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>portlet</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>page</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>application</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>tempoFeed</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>recordType</type>
+                                        
+                    <uuids>
+                                                
+                        <uuid>7d7cc64a-06ef-4fd9-895b-b20bea5bb002</uuid>
+                                            
+                    </uuids>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>recordField</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>recordRelationship</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>tempoReport</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>taskReport</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>webApi</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>site</type>
+                                        
+                    <uuids>
+                                                
+                        <uuid>b695cb25-a6f7-4cc5-984a-adff03b9b511</uuid>
+                                            
+                    </uuids>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>adminSetting</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>thirdPartyCredentials</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>dataSource</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>embeddedSailTheme</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>connectedSystem</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>pluginInfo</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>featureFlag</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>designObjectReferenceImplementation</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>aiSkill</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>roboticTaskDesignObject</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>robotPoolDesignObject</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>portal</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>translationSet</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>translationString</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>translationVariable</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                            
+            </globalIdMap>
+                    
+        </associatedObjects>
+                
+        <applicationNavigation/>
+                
+        <applicationActions/>
+                
+        <associatedApplications>
+                        
+            <globalIdMap>
+                                
+                <item>
+                                        
+                    <type>datatype</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>dataStore</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>user</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>groupType</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>group</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>content</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>forum</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>processModelFolder</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>processModel</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>portlet</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>page</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>application</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>tempoFeed</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>recordType</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>recordField</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>recordRelationship</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>tempoReport</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>taskReport</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>webApi</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>site</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>adminSetting</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>thirdPartyCredentials</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>dataSource</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>embeddedSailTheme</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>connectedSystem</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>pluginInfo</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>featureFlag</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>designObjectReferenceImplementation</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>aiSkill</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>roboticTaskDesignObject</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>robotPoolDesignObject</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>portal</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>translationSet</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>translationString</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                                
+                <item>
+                                        
+                    <type>translationVariable</type>
+                                        
+                    <uuids/>
+                                    
+                </item>
+                            
+            </globalIdMap>
+                    
+        </associatedApplications>
+            
+    </application>
+        
+    <roleMap>
+                
+        <contentRoleMap public="true">
+                        
+            <role allowForAll="false" inherit="false" name="readers">
+                                
+                <users/>
+                                
+                <groups>
+                                        
+                    <groupUuid>333cb1e1-5e6a-4877-a42d-268aa640749b</groupUuid>
+                                    
+                </groups>
+                            
+            </role>
+                        
+            <role allowForAll="false" inherit="false" name="authors">
+                                
+                <users/>
+                                
+                <groups/>
+                            
+            </role>
+                        
+            <role allowForAll="false" inherit="false" name="administrators">
+                                
+                <users/>
+                                
+                <groups>
+                                        
+                    <groupUuid>fd2049d5-5bf6-4300-a4d5-5931fa384b12</groupUuid>
+                                    
+                </groups>
+                            
+            </role>
+                        
+            <role allowForAll="false" inherit="false" name="denyReaders">
+                                
+                <users/>
+                                
+                <groups/>
+                            
+            </role>
+                        
+            <role allowForAll="false" inherit="false" name="denyAuthors">
+                                
+                <users/>
+                                
+                <groups/>
+                            
+            </role>
+                        
+            <role allowForAll="false" inherit="false" name="denyAdministrators">
+                                
+                <users/>
+                                
+                <groups/>
+                            
+            </role>
+                    
+        </contentRoleMap>
+            
+    </roleMap>
+        
+    <defaultApplicationObjects>
+                
+        <object>
+                        
+            <objectKey>defaultAdminsGroup</objectKey>
+                        
+            <objectType>group</objectType>
+                        
+            <objectUuid>fd2049d5-5bf6-4300-a4d5-5931fa384b12</objectUuid>
+                    
+        </object>
+                
+        <object>
+                        
+            <objectKey>defaultUsersGroup</objectKey>
+                        
+            <objectType>group</objectType>
+                        
+            <objectUuid>333cb1e1-5e6a-4877-a42d-268aa640749b</objectUuid>
+                    
+        </object>
+            
+    </defaultApplicationObjects>
+        
+    <applicationDocumentation/>
+        
+    <history>
+                
+        <historyInfo versionUuid="ff0759c2-32e5-4184-82b2-94f7a3748678"/>
+                
+        <historyInfo versionUuid="_a-0000eca8-7ed3-8000-babd-01ef9001ef90_900861"/>
+            
+    </history>
+        
+    <postDeploymentProcessData/>
+    
+</applicationHaul>

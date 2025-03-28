@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types:LM"
+  xmlns:tns="urn:com:appian:types:LM" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="LM_Employee_Details">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">@Table(name="LM_EMPLOYEE_DETAILS")</xsd:appinfo>
+      <xsd:appinfo source="http://www.appian.com/ae/types/2009">
+        <ns2:Metadata xmlns:ns2="http://www.appian.com/ae/types/2009">
+          <ns2:versionUuid>0000ec99-f029-8000-f1f1-014d98014d98</ns2:versionUuid>
+          <ns2:history>
+            <ns2:historyInfo versionUuid="0000ec99-f029-8000-f1f1-014d98014d98"/>
+          </ns2:history>
+        </ns2:Metadata>
+      </xsd:appinfo>
+      <xsd:documentation><![CDATA[Used to store the employee details]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="employeeId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @GeneratedValue @Column(name="EMPLOYEE_ID", nullable=false, unique=true, columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="employeeName" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="EMPLOYEE_NAME", nullable=false, columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="phoneNumber" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="PHONE_NUMBER", nullable=false, columnDefinition="VARCHAR(50)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="emailId" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="EMAIL_ID", nullable=false, columnDefinition="VARCHAR(50)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="dateOfBirth" nillable="true" type="xsd:date">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="DATE_OF_BIRTH", nullable=false, columnDefinition="DATE")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="dateOfJoining" nillable="true" type="xsd:date">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="DATE_OF_JOINING", nullable=false, columnDefinition="DATE")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="address" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="ADDRESS", nullable=false, columnDefinition="VARCHAR(1000)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="gender" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="GENDER", nullable=false, columnDefinition="VARCHAR(25)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="aadharNumber" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="AADHAR_NUMBER", nullable=false, columnDefinition="VARCHAR(50)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="panNumber" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="PAN_NUMBER", nullable=false, columnDefinition="VARCHAR(50)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="creditScore" nillable="true" type="xsd:double">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="CREDIT_SCORE", nullable=false, columnDefinition="DOUBLE")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="nationality" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="NATIONALITY", nullable=false, columnDefinition="VARCHAR(50)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="maritalStatus" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="MARITAL_STATUS", nullable=false, columnDefinition="VARCHAR(50)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="username" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="USERNAME", nullable=false, columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="designation" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="DESIGNATION", nullable=false, columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="grossIncome" nillable="true" type="xsd:double">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="GROSS_INCOME", nullable=false, columnDefinition="DOUBLE")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="yearsOfExperience" nillable="true" type="xsd:double">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="YEARS_OF_EXPERIENCE", nullable=false, columnDefinition="DOUBLE")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="isEmployeePresent" nillable="true" type="xsd:boolean">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="IS_EMPLOYEE_PRESENT", nullable=false, columnDefinition="BIT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

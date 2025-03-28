@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siteHaul xmlns:a="http://www.appian.com/ae/types/2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <versionUuid>86add130-eb23-44af-b0d8-49286379e641</versionUuid>
+  <site a:uuid="b695cb25-a6f7-4cc5-984a-adff03b9b511" name="LM Initate Loan">
+    <description>Site to Initiate a Loan Request</description>
+    <urlStub>loaninitiation</urlStub>
+    <page a:uuid="03939b77-3698-4b56-b369-fa2234d5a64c">
+      <staticName>Loan Initation</staticName>
+      <description/>
+      <urlStub>loan-initation</urlStub>
+      <uiObject a:uuid="0002ece4-11ce-8000-f531-014d98014d98" xsi:type="a:ProcessModel"/>
+      <iconId>f3f1</iconId>
+      <visibilityExpr>fn!true()</visibilityExpr>
+      <pageWidth>WIDE</pageWidth>
+      <areUrlParamsEncrypted>true</areUrlParamsEncrypted>
+      <autoContextUpdateEnabled>true</autoContextUpdateEnabled>
+    </page>
+    <visibility>268435456</visibility>
+    <faviconRef a:uuid="SYSTEM_CONTENT_SITES_DEFAULT_FAVICON" xsi:type="a:CollaborationDocument"/>
+    <logoRef a:uuid="SYSTEM_CONTENT_SITES_DEFAULT_LOGO" xsi:type="a:CollaborationDocument"/>
+    <showName>false</showName>
+    <tempoLinkVisibility>HIDDEN</tempoLinkVisibility>
+    <showRecordNews>true</showRecordNews>
+    <tasksInSitesVisibility>HIDDEN</tasksInSitesVisibility>
+    <buttonShape>SQUARED</buttonShape>
+    <navigationBarStyle>STYLE1</navigationBarStyle>
+    <inputShape>SQUARED</inputShape>
+    <isSystem>false</isSystem>
+    <displayName>Loan Initiation</displayName>
+    <isStaticDisplayName>true</isStaticDisplayName>
+    <nameExprIsEvaluable>true</nameExprIsEvaluable>
+    <primaryNavLayoutType>TOPBAR</primaryNavLayoutType>
+  </site>
+  <roleMap>
+    <role name="site_administrator">
+      <users/>
+      <groups>
+        <groupUuid>fd2049d5-5bf6-4300-a4d5-5931fa384b12</groupUuid>
+      </groups>
+    </role>
+    <role name="site_viewer">
+      <users/>
+      <groups>
+        <groupUuid>333cb1e1-5e6a-4877-a42d-268aa640749b</groupUuid>
+      </groups>
+    </role>
+  </roleMap>
+  <history>
+    <historyInfo versionUuid="86add130-eb23-44af-b0d8-49286379e641"/>
+  </history>
+</siteHaul>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<processModelFolderHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>82defa59-9c40-4f76-84f0-2e83b9deff91</versionUuid>
+    <processModelFolder>
+        <name>LM Process Models</name>
+        <uuid>26a0a9a2-321f-4a6d-a68c-19ee2bf6e1e4</uuid>
+        <description>Stores process models for the application</description>
+    </processModelFolder>
+    <roleMap>
+        <role name="ADMIN_OWNER">
+            <users/>
+            <groups>
+                <groupUuid>fd2049d5-5bf6-4300-a4d5-5931fa384b12</groupUuid>
+            </groups>
+        </role>
+        <role name="EDITOR">
+            <users/>
+            <groups/>
+        </role>
+        <role name="EXPLICIT_NONMEMBER">
+            <users/>
+            <groups/>
+        </role>
+        <role name="VIEWER">
+            <users/>
+            <groups>
+                <groupUuid>333cb1e1-5e6a-4877-a42d-268aa640749b</groupUuid>
+            </groups>
+        </role>
+        <role name="MANAGER">
+            <users/>
+            <groups/>
+        </role>
+        <role name="INITIATOR">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="82defa59-9c40-4f76-84f0-2e83b9deff91"/>
+    </history>
+</processModelFolderHaul>

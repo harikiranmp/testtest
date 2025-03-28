@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types:LM"
+  xmlns:tns="urn:com:appian:types:LM" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="LM_V_Loan_Details">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">@Table(name="LM_V_LOAN_DETAILS")</xsd:appinfo>
+      <xsd:appinfo source="http://www.appian.com/ae/types/2009">
+        <ns2:Metadata xmlns:ns2="http://www.appian.com/ae/types/2009">
+          <ns2:versionUuid>0002ec9c-0d2d-8000-f218-014d98014d98</ns2:versionUuid>
+          <ns2:history>
+            <ns2:historyInfo versionUuid="0002ec9c-0d2d-8000-f218-014d98014d98"/>
+          </ns2:history>
+        </ns2:Metadata>
+      </xsd:appinfo>
+      <xsd:documentation><![CDATA[Database view that contains the Loan details]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="loanId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @Column(name="LOAN_ID", nullable=false, columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="employeeId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="EMPLOYEE_ID", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="employeeName" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="EMPLOYEE_NAME", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="requestReferenceNumber" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="REQUEST_REFERENCE_NUMBER", columnDefinition="VARCHAR(50)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="activeAppianProcessId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="ACTIVE_APPIAN_PROCESS_ID", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="appianFolderId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="APPIAN_FOLDER_ID", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="loanAmount" nillable="true" type="xsd:double">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="LOAN_AMOUNT", columnDefinition="DOUBLE")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="loanTypeId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="LOAN_TYPE_ID", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="loanTypeName" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="LOAN_TYPE_NAME", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="priorityId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="PRIORITY_ID", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="priority" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="PRIORITY", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="suretyPersonName" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="SURETY_PERSON_NAME", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="reasonOfLoan" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="REASON_OF_LOAN", columnDefinition="VARCHAR(1000)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="expectedDate" nillable="true" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="EXPECTED_DATE", columnDefinition="DATETIME")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="repayDuration" nillable="true" type="xsd:double">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="REPAY_DURATION", columnDefinition="DOUBLE")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="interestRate" nillable="true" type="xsd:double">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="INTEREST_RATE", columnDefinition="DOUBLE")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="requestedBy" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="REQUESTED_BY", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="requestedOn" nillable="true" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="REQUESTED_ON", columnDefinition="DATETIME")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="status" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="STATUS", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="updatedBy" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="UPDATED_BY", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="updatedOn" nillable="true" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="UPDATED_ON", columnDefinition="DATETIME")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="currency" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="CURRENCY", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="isDeclarationGiven" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="IS_DECLARATION_GIVEN", columnDefinition="TINYINT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="emiAmount" nillable="true" type="xsd:double">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="EMI_AMOUNT", columnDefinition="DOUBLE")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="relationshipId" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="RELATIONSHIP_ID", columnDefinition="INT")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="relationship" nillable="true" type="xsd:string">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="RELATIONSHIP", columnDefinition="VARCHAR(255)")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="otherRelationship" nillable="true" type="xsd:double">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Column(name="OTHER_RELATIONSHIP", columnDefinition="DOUBLE")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>3970dad2-e5ad-4da3-9c54-eaa14d3b7466</versionUuid>
+    <communityKnowledgeCenter>
+        <name>LM Knowledge Center</name>
+        <uuid>b8e94c48-8a00-426c-a167-cf9c575ad3a2</uuid>
+        <description>Stores document folders and files for the application</description>
+        <parentUuid>SYSTEM_COMMUNITY_ROOT</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <expirationDays>0</expirationDays>
+    </communityKnowledgeCenter>
+    <roleMap public="true">
+        <role inherit="false" allowForAll="false" name="readers">
+            <users/>
+            <groups>
+                <groupUuid>333cb1e1-5e6a-4877-a42d-268aa640749b</groupUuid>
+            </groups>
+        </role>
+        <role inherit="false" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="administrators">
+            <users/>
+            <groups>
+                <groupUuid>fd2049d5-5bf6-4300-a4d5-5931fa384b12</groupUuid>
+            </groups>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="3970dad2-e5ad-4da3-9c54-eaa14d3b7466"/>
+    </history>
+</contentHaul>

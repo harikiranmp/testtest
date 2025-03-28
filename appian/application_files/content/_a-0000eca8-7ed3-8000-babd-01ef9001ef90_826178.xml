@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <versionUuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_853633</versionUuid>
+    <interface>
+        <name>LM_FRM_loanInitiation</name>
+        <uuid>_a-0000eca8-7ed3-8000-babd-01ef9001ef90_826178</uuid>
+        <description></description>
+        <parentUuid>222aa2d8-d036-47a1-8b2f-350cdb1214a1</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>a!localVariables(
+  local!currentStep: 1,
+  local!isInitiation: or(a!isNullOrEmpty(ri!loanId), ri!loanId = 0),
+  local!lookupDetails: #"263b5f9b-b8e6-4907-b52c-ea2f3864f837"(),
+  local!loanDetails: if(
+    local!isInitiation = true(),
+    ri!loanDetails,
+    #"_a-0000eca8-7ed3-8000-babd-01ef9001ef90_826208"(loanId: ri!loanId)
+  ),
+  local!employeeDetails: if(
+    local!isInitiation = true(),
+    ri!employeeDetails,
+    #"_a-0000eca8-7ed3-8000-babd-01ef9001ef90_826184"(
+      employeeId: local!loanDetails.employeeId
+    )
+  ),
+  local!documentDetails: if(
+    local!isInitiation = true(),
+    ri!documentDetails,
+    #"_a-0000eca8-7ed3-8000-babd-01ef9001ef90_843642"(loanId: local!loanDetails.loanId)
+  ),
+  #"SYSTEM_SYSRULES_formLayout_v1"(
+    label: if(
+      local!isInitiation = true(),
+      "Loan Initiation",
+      "Loan Sent Back | Loan Id: " &amp; ri!loanId
+    ),
+    contents: {
+      #"SYSTEM_SYSRULES_milestoneField"(
+        label: "Milestone",
+        steps: {
+          "Employee Details",
+          "Loan Type",
+          "Documents &amp; Comments"
+        },
+        active: local!currentStep
+      ),
+      choose(
+        local!currentStep,
+        #"SYSTEM_SYSRULES_sectionLayout_v1"(
+          contents: #"_a-0000eca8-7ed3-8000-babd-01ef9001ef90_824959"(employeeDetails: local!employeeDetails)
+        ),
+        #"SYSTEM_SYSRULES_sectionLayout_v1"(
+          contents: #"_a-0000eca8-7ed3-8000-babd-01ef9001ef90_824996"(loanDetails: local!loanDetails),
+          
+        ),
+        #"SYSTEM_SYSRULES_sectionLayout_v1"(
+          contents: #"_a-0000eca8-7ed3-8000-babd-01ef9001ef90_825117"(
+            documentDetails: local!documentDetails,
+            lookupdetails: local!lookupDetails,
+            comments: ri!comments
+          )
+        )
+      )
+    },
+    buttons: #"SYSTEM_SYSRULES_ButtonLayout"(
+      primaryButtons: {
+        #"SYSTEM_SYSRULES_buttonWidget_v1"(
+          label: "Next",
+          saveInto: a!save(local!currentStep, local!currentStep + 1),
+          showWhen: if(local!currentStep = 3, false(), true())
+        ),
+        #"SYSTEM_SYSRULES_buttonWidget_v1"(
+          label: "Submit",
+          showWhen: if(local!currentStep = 3, true(), false()),
+          value: "Submit",
+          saveInto: {
+            ri!buttonAction,
+            a!save(
+              ri!loanDetails,
+              #"urn:appian:function:v1:a:update"(
+                ri!loanDetails,
+                { "status", "updatedOn", "updatedBy" },
+                { "Initiated", now(), loggedInUser() }
+              )
+            ),
+            a!save(
+              ri!requestHistory,
+              #"urn:appian:function:v1:a:update"(
+                ri!requestHistory,
+                {
+                  "notes",
+                  "stage",
+                  "actionPerformed",
+                  "completedOn",
+                  "completedBy"
+                },
+                {
+                  ri!comments,
+                  "Initiation",
+                  ri!buttonAction,
+                  now(),
+                  loggedInUser()
+                }
+              )
+            )
+          },
+          submit: true()
+        )
+      },
+      secondaryButtons: {
+        #"SYSTEM_SYSRULES_buttonWidget_v1"(
+          label: "Cancel",
+          color: "NEGATIVE",
+          value: "Cancel",
+          saveInto: {
+            ri!buttonAction,
+            a!save(
+              ri!requestHistory,
+              #"urn:appian:function:v1:a:update"(
+                ri!requestHistory,
+                {
+                  "notes",
+                  "stage",
+                  "actionPerformed",
+                  "completedOn",
+                  "completedBy"
+                },
+                {
+                  ri!comments,
+                  "Initiation",
+                  ri!buttonAction,
+                  now(),
+                  loggedInUser()
+                }
+              )
+            )
+          },
+          submit: true()
+        ),
+        #"SYSTEM_SYSRULES_buttonWidget_v1"(
+          label: "Back",
+          showWhen: if(local!currentStep = 1, false(), true()),
+          saveInto: a!save(local!currentStep, local!currentStep - 1)
+        ),
+        
+      }
+    )
+  )
+)</definition>
+        <namedTypedValue>
+            <name>employeeDetails</name>
+            <type>
+                <name>LM_Employee_Details</name>
+                <namespace>urn:com:appian:types:LM</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>loanDetails</name>
+            <type>
+                <name>LM_LoanDetails</name>
+                <namespace>urn:com:appian:types:LM</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>documentDetails</name>
+            <type>
+                <name>LM_loanDocuments?list</name>
+                <namespace>urn:com:appian:types:LM</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>requestHistory</name>
+            <type>
+                <name>LM_RequestHistoryDetails</name>
+                <namespace>urn:com:appian:types:LM</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>loanId</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>buttonAction</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>comments</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+        <isCustom>false</isCustom>
+    </interface>
+    <roleMap public="true">
+        <role inherit="true" allowForAll="false" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="true" allowForAll="false" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role inherit="false" allowForAll="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+    <history>
+        <historyInfo versionUuid="_a-0000eca8-7ed3-8000-babd-01ef9001ef90_853633"/>
+    </history>
+</contentHaul>
